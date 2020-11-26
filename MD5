@@ -1,0 +1,15 @@
+03e8c8366da0eb921d4356c1a2f0fc67 *DESCRIPTION
+ab9cf3e6eb27d18f8daf57e90e869d97 *NAMESPACE
+6051e1e2ac1d196fee9ecdfa62e29f3d *R/attach_eval.R
+97157c5c4b3f8d48188487ba650d9544 *R/attach_source.R
+91483f762ff14b479f0916893a51a1cd *R/import_from.R
+b50a4627db70eb5f108fbdf7eda26fdf *R/include.R
+233b48ed5f7b20685365590ecf701c61 *R/set_library_default_pos.R
+e37950f31ad6e438b260c71b9b720aba *R/within.R
+0de5fa53aebc45ca84addac704e235d7 *README.md
+a8bee9a11f41f366046bdcee33faf6ee *man/attach_eval.Rd
+62d171cfbc52ac316c9e715c4db2fe2e *man/attach_source.Rd
+110ce7adcccf012642a3c3726164b666 *man/import_from.Rd
+c4accf17a3df76c10201526a19aaf34c *man/include.Rd
+b0e0f9aab4b1b0b9404b1dd2f148f2df *man/set_library_default_pos.Rd
+498538c20341b6b68558f603cde0d0a8 *man/within.environment.Rd
