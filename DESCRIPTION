@@ -1,6 +1,6 @@
 Package: envir
 Title: Manage R Environments Better
-Version: 0.1.0
+Version: 0.2.0
 Authors@R: 
     person(given = "Tomasz",
            family = "Kalinowski",
@@ -14,8 +14,8 @@ Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1
 NeedsCompilation: no
-Packaged: 2020-11-24 13:33:22 UTC; tomasz
+Packaged: 2021-02-27 14:09:21 UTC; tomasz
 Author: Tomasz Kalinowski [aut, cre]
 Maintainer: Tomasz Kalinowski <kalinowskit@gmail.com>
 Repository: CRAN
-Date/Publication: 2020-11-26 09:00:02 UTC
+Date/Publication: 2021-02-27 14:20:02 UTC

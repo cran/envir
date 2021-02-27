@@ -26,8 +26,9 @@
 #' @param .overwrite One of `"warn"`, `"error"` or `"ignore"`. Can also be a
 #'   boolean `TRUE` (same as `"ignore"`) or `FALSE` (same as `"error"`). What
 #'   should be done if the requested import operation would overwrite an
-#'   existing object.
-#' @return the \R environment or object that `x` resolved to, invisibly.
+#'   existing object. Character arguments can be abbreviated as partial matching
+#'   is performed.
+#' @return The \R environment or object that `x` resolved to, invisibly.
 #' @export
 #'
 #' @examples
@@ -128,7 +129,7 @@
 #' rm(show_whats_imported, tmpdir, owd)
 import_from <- function(x, ..., .into = parent.frame(),
                         .parent = .GlobalEnv,
-                        .overwrite = if(interactive()) "warn" else "error",
+                        .overwrite = interactive(),
                         .chdir = FALSE, .recursive = FALSE, .pos = 2L) {
 
   .into <- as_maybe_attached_env(.into, .pos)
@@ -235,8 +236,13 @@ check_requested_imports_valid <- function(from, imports) {
       paste0("`", unname(imports)[no_match], "`", collapse = ", ")
     ))
 
-  if (!is.environment(from) &&
-      anyDuplicated(mch <- match(names_from, imports))) {
+  if(is.environment(from))
+    return()
+
+  # check if requested name is not unique in the originating frame
+  mch <- match(names_from, imports)
+  mch <- mch[!is.na(mch)]
+  if(anyDuplicated(mch)) {
     stop(sprintf(
       ngettext(
         sum(dups <- duplicated(mch) & !is.na(mch)),
@@ -255,10 +261,12 @@ resolve_wildcard_imports <- function(from, wildcard, overrides) {
   if (wildcard == "*") {
 
     imports <- if (isNamespace(from))
+      #c(from[[".__NAMESPACE__."]][["S3methods"]][, 3L]),
       getNamespaceExports(from)
     else
       grep("^[._]", names(from), value = TRUE, invert = TRUE)
   } else {
+
     imports <- names(from)
     if (isNamespace(from) && wildcard == "**")
       imports <- setdiff(
@@ -274,7 +282,6 @@ resolve_wildcard_imports <- function(from, wildcard, overrides) {
           ".onDetach",
           "library.dynam.unload",
           ".conflicts.OK",
-          # from[[".__NAMESPACE__."]][["S3methods"]][, 3L],
           ".noGenerics"
         )
       )
