@@ -1,6 +1,6 @@
 Package: envir
 Title: Manage R Environments Better
-Version: 0.2.0
+Version: 0.2.1
 Authors@R: 
     person(given = "Tomasz",
            family = "Kalinowski",
@@ -11,11 +11,10 @@ License: GPL-3
 URL: https://t-kalinowski.github.io/envir/
 BugReports: https://github.com/t-kalinowski/envir/issues
 Encoding: UTF-8
-LazyData: true
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
 NeedsCompilation: no
-Packaged: 2021-02-27 14:09:21 UTC; tomasz
+Packaged: 2021-09-20 17:45:07 UTC; tomasz
 Author: Tomasz Kalinowski [aut, cre]
 Maintainer: Tomasz Kalinowski <kalinowskit@gmail.com>
 Repository: CRAN
-Date/Publication: 2021-02-27 14:20:02 UTC
+Date/Publication: 2021-09-20 18:00:02 UTC
